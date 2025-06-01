@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Tanya Jawab Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+    }
+    #jawaban {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #aaa;
+      background: #f9f9f9;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>AI Tanya Jawab Sederhana</h2>
+
+  <input type="text" id="pertanyaan" placeholder="Tulis pertanyaan di sini..." />
+  <button onclick="jawab()">Tanya</button>
+
+  <div id="jawaban"></div>
+
+  <script>
+    const qa = {
+      "apa itu ai": "AI adalah singkatan dari Artificial Intelligence, yaitu kecerdasan buatan.",
+      "siapa presiden indonesia": "Presiden Indonesia saat ini adalah Joko Widodo.",
+      "berapa hasil 2+2": "Hasilnya adalah 4.",
+      "apa warna langit": "Warna langit biasanya biru di siang hari.",
+      "siapa pembuatmu": "Dibuat oleh Rossi, 15 tahun.",
+      "siapa penciptamu": "Dibuat oleh Rossi, 15 tahun.",
+      "kenapa kamu diciptakan": "Untuk bahan mencari data.",
+      "fungsi hand grip": 
+`Hand grip memiliki beberapa fungsi, antara lain:
+- Melatih kekuatan genggaman
+- Meningkatkan kekuatan lengan
+- Mengurangi stres
+- Meningkatkan koordinasi tangan
+- Menguatkan otot-otot tangan`,
+      "link download apk kucing": `<a href="https://apkfolder.io/apk/kucing/" target="_blank">Klik di sini untuk download APK kucing</a>`,
+      "apa": "gj lu",
+      "good job": "Terima kasih atas pujiannya.",
+      "halo": "Halo juga kawan.",
+      "hallo": "Hallo juga kawan.",
+     "cara masuk isekai": 
+`ada beberapa cara,yaitu:
+- di tabrak truck
+- di bunuh npc
+- jatuh dari gedung
+- di jual ke iblis
+- di ewe brutal :)
+(sosok mesum menambahkan kata2)`,
+      "nomor": 
+`ada benerapa nomor wa,yaitu:
+- nomor Chyntia = 822×5681×0735
+- nomor Rossi = 0857×2508×0024
+- nomor Dewi = 831×1611×8235`,
+      "cara buat anak":
+`ada beberapa cara ya orang mesum,yaitu
+- nikah terus lakukan malam pertama
+- di perkosa
+- beli sperma masukin itumu
+- jadi cewe malam/jual diri
+- minta sama temen buat gituin lo
+- kalo kau deket purwokerto:) bolela
+0857×2508×0024(khusus cwe aja)`,
+      "aku+kamu": "bolehh cari pertannyaan yang buat kita bisa ketemu",
+      "chyntia": `aku sayang kau.cuman gabisa memiliki
+      :v(sumber : pembuat ai)`,
+      "link": "https://rossi297.github.io/...(isi nama projek or apala)",
+      "dewi": "aku sebenernya gamon ama kau cuman yaa takutnya ntar kayak pas itu",
+      "dewi siapa?": "ya dia cwe yang ngeyel cuman ya gw tetep suka",
+      "dewi siapa": "ya dia cwe yang ngeyel cuman ya gw tetep suka",
+      "pesan untuk dewi": "i love you dewi",
+      "siapa dewi": "cewe ngeyel tapi membuatku gamon",
+      "kenapa dinamain ai": "karena bingung mau dinamain apa",
+      "ai macam apa ini": "mohon maklumin soalnya kalo mau kayak chatgpt dan cici itu ilmuku belum sampai lagian cita citaku web developer",
+      "kenapa buat ai": "ya pengen nyimpen beberapa data",
+      "siapa chyntia": "dulu pas gw kelas 5 an kayaknya gw pernah mimpi soal pertemuan sama cewe yang ngasih aku uang terus cuman pada suatu saat gw sama dia pas di mimpi pisah dan gw bilang gw pernah mimpi ketemu sama dia.ya itu kau Chyntia:)",
+      "dua tahun berapa hari":
+`Dua tahun memiliki 730 hari, jika diasumsikan bahwa setiap tahun memiliki 365 hari. Namun, jika salah satu tahun tersebut adalah tahun kabisat (tahun yang memiliki 366 hari), maka total hari menjadi 731 hari.
+Jadi, jawabannya adalah:
+- 730 hari (jika tidak ada tahun kabisat)
+- 731 hari (jika ada tahun kabisat)`,
+      "umur anak puber":
+`Umur anak puber biasanya berkisar antara 10-19 tahun, sesuai dengan definisi Organisasi Kesehatan Dunia (WHO) tentang remaja. Namun, perlu diingat bahwa setiap anak memiliki perkembangan yang unik dan berbeda-beda.
+
+Berikut adalah tahapan perkembangan remaja yang umum:
+- Pra-remaja (10-12 tahun): Anak-anak mulai mengalami perubahan fisik dan emosi awal.
+- Remaja awal (13-15 tahun): Anak-anak mengalami perubahan fisik yang lebih signifikan, seperti pertumbuhan tinggi badan dan perubahan suara.
+- Remaja tengah (16-17 tahun): Anak-anak mulai mengembangkan identitas dan kemandirian mereka.
+- Remaja akhir (18-19 tahun): Anak-anak mulai memasuki tahap dewasa muda dan mempersiapkan diri untuk kehidupan mandiri.
+
+Perlu diingat bahwa tahapan perkembangan ini dapat berbeda-beda pada setiap anak, dan beberapa anak mungkin mengalami pubertas lebih awal atau lebih lambat daripada yang lain.`,
+     "berpikir secara logika adalah":
+`Berpikir secara logika adalah proses mental yang menggunakan penalaran dan analisis untuk mencapai kesimpulan yang rasional dan berdasarkan fakta. Berikut beberapa karakteristik berpikir logis:
+
+- Menggunakan bukti dan fakta: Berpikir logis berdasarkan pada bukti dan fakta yang ada, bukan pada asumsi atau pendapat pribadi.
+- Menganalisis informasi: Berpikir logis melibatkan analisis informasi yang cermat dan teliti untuk memahami hubungan antara fakta-fakta.
+- Menggunakan penalaran: Berpikir logis menggunakan penalaran untuk mencapai kesimpulan yang logis dan rasional.
+- Menghindari bias: Berpikir logis berusaha untuk menghindari bias dan prasangka yang dapat mempengaruhi kesimpulan.
+- Menggunakan prinsip-prinsip logika: Berpikir logis menggunakan prinsip-prinsip logika, seperti deduksi dan induksi, untuk mencapai kesimpulan yang valid.
+
+Dengan berpikir secara logika, kita dapat membuat keputusan yang lebih tepat, memecahkan masalah dengan lebih efektif, dan memahami dunia sekitar dengan lebih baik.`,
+    };
+
+    function hitungEkspresi(teks) {
+      let ekspresi = teks.replace(/×|x/gi, '*')
+                         .replace(/÷|:/g, '/')
+                         .replace(/,/g, '.');
+      if (/^[0-9\.\s\+\-\*\/]+$/.test(ekspresi)) {
+        try {
+          const hasil = eval(ekspresi);
+          const hasilFormatted = hasil.toString().replace('.', ',');
+          const tampilan = teks.replace(/\*/g, '×').replace(/\//g, '÷');
+          return `${tampilan} = ${hasilFormatted}`;
+        } catch {
+          return null;
+        }
+      }
+      return null;
+    }
+
+    async function translateOtomatis(teks, target) {
+      try {
+        const res = await fetch("https://libretranslate.com/translate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            q: teks,
+            source: "auto",
+            target: target,
+            format: "text"
+          })
+        });
+        const data = await res.json();
+        return data.translatedText;
+      } catch (err) {
+        return "Gagal menerjemahkan (koneksi atau server error).";
+      }
+    }
+
+    async function jawab() {
+      const input = document.getElementById("pertanyaan").value.toLowerCase().trim();
+      const output = document.getElementById("jawaban");
+
+      if (qa[input]) {
+        output.innerHTML = qa[input]; // Gunakan innerHTML agar HTML bisa dirender
+        return;
+      }
+
+      if (input.startsWith("translate ") || input.startsWith("terjemahkan ")) {
+        const kalimat = input.replace(/^translate |^terjemahkan /, "").trim();
+        const target = /^[a-z\s]+$/.test(kalimat) ? "id" : "en";
+        const hasil = await translateOtomatis(kalimat, target);
+        output.textContent = hasil;
+        return;
+      }
+
+      const hasilHitung = hitungEkspresi(input);
+      if (hasilHitung) {
+        output.textContent = hasilHitung;
+        return;
+      }
+
+      output.textContent = "Maaf, saya tidak tahu jawabannya.";
+    }
+  </script>
+
+</body>
+</html>
